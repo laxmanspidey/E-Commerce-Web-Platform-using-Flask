@@ -1,0 +1,38 @@
+{%extends 'base.html' %}
+{% block title%}Login Page{%endblock%}
+{% block content%}
+<body class="text-center">
+    <div class="container">
+        <form method="POST" class="form-signin" style="color:wheat">
+            {{ form.hidden_tag() }}
+            <img class="mb-4" src="https://wallpapers.com/images/hd/oggy_and_the_-cockroaches_20th_-anniversary_-logo-hix6l3qjsbj11px8-hix6l3qjsbj11px8.png" style="max-width: 200px;">
+            <h1 class="h3 mb-3 font-weight-normal" style="font-size: 50px;">
+                Please Login
+            </h1>
+            <br>
+            <div class="form-group text-left">
+            {{ form.username.label(style="font-size: 30px;") }}
+            {{ form.username(class="form-control", placeholder="User Name") }}
+            </div>
+
+            <div class="form-group text-left">
+            {{ form.password.label(style="font-size: 30px;") }}
+            {{ form.password(class="form-control", placeholder="Password") }}
+            </div>
+            <br>
+
+
+            <div class="checkbox mb-3">
+               <h6>Do not have an account?</h6>
+               <!--<a class="btn btn-sm btn-secondary" href="{{ url_for('register_page') }}">Register</a>-->
+               <a class="btn btn-sm" style="background-color: green; color: white;" href="{{ url_for('register_page') }}">Register</a>
+            </div>
+
+            {{ form.submit(class="btn btn-lg btn-block btn-primary") }}
+            <br>
+            <br>
+            <br>
+        </form>
+    </div>
+</body>
+{%endblock%}
